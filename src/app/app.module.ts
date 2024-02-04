@@ -10,7 +10,9 @@ import { NavbarComponent } from './shared/components/Home/navbar/navbar.componen
 import { LandingpageComponent } from './shared/components/Home/landingpage/landingpage.component';
 import { FeaturespageComponent } from './shared/components/Home/featurespage/featurespage.component';
 import { ThirdpageComponent } from './shared/components/Home/thirdpage/thirdpage.component';
-import { FooterComponent } from './shared/components/footer/footer.component';
+import { FooterComponent } from './shared/components/Home/footer/footer.component';
+import { SignupComponent } from './shared/components/signup/signup.component';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 
 @NgModule({
   declarations: [
@@ -21,12 +23,17 @@ import { FooterComponent } from './shared/components/footer/footer.component';
     FeaturespageComponent,
     ThirdpageComponent,
     FooterComponent,
+    SignupComponent,
+
 
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    HttpClientModule
+    HttpClientModule,
+    FormsModule,
+    ReactiveFormsModule
+
   ],
   providers: [ApiService],
   bootstrap: [AppComponent]
