@@ -11,9 +11,13 @@ import { LandingpageComponent } from './shared/components/Home/landingpage/landi
 import { FeaturespageComponent } from './shared/components/Home/featurespage/featurespage.component';
 import { ThirdpageComponent } from './shared/components/Home/thirdpage/thirdpage.component';
 import { FooterComponent } from './shared/components/Home/footer/footer.component';
-import { SignupComponent } from './shared/components/signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { LoginComponent } from './shared/components/login/login.component';
+import { AdminModule } from './admin/admin.module';
+import { OrganisationAdminModule } from './organisation-admin/organisation-admin.module';
+import { SignupComponent } from './shared/components/signup/signup.component';
+import { VerificationOtpComponent } from './shared/components/verification-otp/verification-otp.component';
+import { ToolbarComponent } from './shared/components/toolbar/toolbar.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +27,10 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FeaturespageComponent,
     ThirdpageComponent,
     FooterComponent,
+    LoginComponent,
     SignupComponent,
+    VerificationOtpComponent,
+    ToolbarComponent
 
 
   ],
@@ -32,10 +39,13 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AdminModule,
+    OrganisationAdminModule,
+
 
   ],
-  providers: [ApiService],
+  providers: [ApiService,OrganisationAdminModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

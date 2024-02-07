@@ -7,7 +7,7 @@
         <div class="w-full md:w-2/3 lg:w-1/2 xl:w-2/5">
           <div class="bg-white rounded-lg relative p-3">
             <h2 class="text-2xl uppercase text-center mb-3">Create an account</h2>
-            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+            <form [formGroup]="signupForm" (ngSubmit)="onSubmit()"class="needs-validation" novalidate>
 
               <!-- Company Name -->
               <div class="mb-4">
@@ -47,7 +47,7 @@
                   Contact Number is required.
                 </div>
                 <div *ngIf="signupForm.get('contactNumber')?.hasError('pattern') && signupForm.get('contactNumber')?.touched" class="text-danger">
-                  Contact Number should have at least 10 digits.
+                  Invalid phone number.
                 </div>
               </div>
 
@@ -74,7 +74,8 @@
                   Passwords do not match.
                 </div>
               </div>
-
+              
+              <app-verification-otp *ngIf="showOtpComp"></app-verification-otp>
               <!-- Terms Checkbox -->
               <div class="mb-4">
                 <label class="flex items-center">

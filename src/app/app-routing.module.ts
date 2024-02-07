@@ -5,7 +5,8 @@ import { SignupComponent } from './shared/components/signup/signup.component';
 
 const routes: Routes = [
   {path:'',component:HomeComponent},
-  {path:'signup', component:SignupComponent}
+  {path:'signup', component:SignupComponent},
+  // {path:'otpVerification', component:VerificationOtpComponent},
 ];
 
 @NgModule({
