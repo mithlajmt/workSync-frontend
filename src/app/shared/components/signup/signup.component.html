@@ -8,6 +8,7 @@
           <div class="bg-white rounded-lg relative p-3">
             <h2 class="text-2xl uppercase text-center mb-3">Create an account</h2>
             <form [formGroup]="signupForm" (ngSubmit)="onSubmit()"class="needs-validation" novalidate>
+              <h1>{{errorMessage}}</h1>
 
               <!-- Company Name -->
               <div class="mb-4">
@@ -75,7 +76,7 @@
                 </div>
               </div>
               
-              <app-verification-otp *ngIf="showOtpComp"></app-verification-otp>
+              <app-verification-otp *ngIf="showOtpComp" [companyData]="signupForm" ></app-verification-otp>
               <!-- Terms Checkbox -->
               <div class="mb-4">
                 <label class="flex items-center">

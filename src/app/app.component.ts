@@ -17,21 +17,5 @@ export class AppComponent {
    
   }
 
-
-  submit(){
-    // this.apiService.getHello().subscribe((data) => {
-    //   this.message = data;
-    // });
-    this.apiService.userSignupPost({name:"sudais"}).subscribe({
-      next:(res)=>{
-        console.log(res);
-        
-      },
-      error:(err)=>{
-        console.log(err);
-        
-      }
-    })
-
   }
-}
+

@@ -2,6 +2,7 @@ import { Component, OnInit } from '@angular/core';
 import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { CommonService } from '../../services/common.service';
 import { HttpClient } from '@angular/common/http';
+import { ApiService } from '../../services/api.service';
 
 @Component({
   selector: 'app-signup',
@@ -11,30 +12,11 @@ import { HttpClient } from '@angular/common/http';
 export class SignupComponent implements OnInit {
   signupForm: FormGroup;
   showOtpComp:Boolean=false;
-
-  get contactEmail() {
-    return this.signupForm.get('contactEmail');
-  }
-
-  get contactNumber() {
-    return this.signupForm.get('contactNumber');
-  }
-
-  get password() {
-    return this.signupForm.get('password');
-  }
-
-  get confirmPassword() {
-    return this.signupForm.get('confirmPassword');
-  }
-
-  get terms() {
-    return this.signupForm.get('terms');
-  }
+  errorMessage:any
 
   constructor(
     private fb: FormBuilder,
-    private commonService: CommonService,
+    private apiService: ApiService,
     private http : HttpClient
   ) {
     this.signupForm = this.fb.group({
@@ -56,23 +38,34 @@ export class SignupComponent implements OnInit {
       ],
       confirmPassword: ['', [Validators.required]],
       terms: [false, [Validators.requiredTrue]],
+      
     });
   }
+
+  signupFormData:any;
 
   ngOnInit(): void {}
 
   onSubmit() {
+    this.signupFormData = this.signupForm.value
     // Add your form submission logic here
-    console.log(this.signupForm.value);
-    
-    this.commonService.userSignupPost(this.signupForm.value)
+    console.log(this.signupForm);
+    this.apiService.userSignupPost(this.signupFormData)
     .subscribe({
       next:(res:any)=>{
         this.showOtpComp=true
+        this.errorMessage=''
         console.log(res);
+      },
+      error: (err: any) => {
+        this.showOtpComp = false; 
+        this.errorMessage = err.error?.data?.message || 'An error occurred.';
+        console.error(err);
+      },
+    });
 
-      }
-    })
+
+    this.showOtpComp=true
 }
 }
     
