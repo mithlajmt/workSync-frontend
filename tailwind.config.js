@@ -2,6 +2,8 @@
 module.exports = {
   content: [
     "./src/**/*.{html,ts}",
+    "./src/app/organisation-admin/**/*.html", 
+    "./src/app/organisation-admin/**/*.ts",
   ],
   theme: {
     extend: {

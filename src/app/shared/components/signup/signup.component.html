@@ -1,5 +1,3 @@
-<!-- signup.component.html -->
-
 <section class="h-screen bg-cover bg-center">
   <div class="flex items-center h-full bg-gradient-to-r from-gray-800 via-gray-700 to-gray-600 rounded-lg">
     <div class="container mx-auto rounded-lg">
@@ -8,6 +6,7 @@
           <div class="bg-white rounded-lg relative p-3">
             <h2 class="text-2xl uppercase text-center mb-3">Create an account</h2>
             <form [formGroup]="signupForm" (ngSubmit)="onSubmit()" class="needs-validation" novalidate>
+              <h1>{{errorMessage}}</h1>
 
               <!-- Company Name -->
               <div class="mb-4">
@@ -47,14 +46,15 @@
                   Contact Number is required.
                 </div>
                 <div *ngIf="signupForm.get('contactNumber')?.hasError('pattern') && signupForm.get('contactNumber')?.touched" class="text-danger">
-                  Contact Number should have at least 10 digits.
+                  Invalid phone number.
                 </div>
               </div>
 
               <!-- Password -->
               <div class="mb-4">
                 <label class="block text-sm font-medium text-gray-700" for="password">Password</label>
-                <input type="password" id="password" class="w-full px-3 py-2 border rounded-md" formControlName="password" pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" />
+                <input type="password" id="password" class="w-full px-3 py-2 border rounded-md" formControlName="password"
+                  pattern="^(?=.*[a-z])(?=.*[A-Z])(?=.*\d)(?=.*[@$!%*?&])[A-Za-z\d@$!%*?&]{8,}$" />
                 <div *ngIf="signupForm.get('password')?.hasError('required') && signupForm.get('password')?.touched" class="text-danger">
                   Password is required.
                 </div>
@@ -75,6 +75,9 @@
                 </div>
               </div>
 
+              <!-- Verification OTP -->
+              <app-verification-otp *ngIf="showOtpComp" [companyData]="signupForm"></app-verification-otp>
+
               <!-- Terms Checkbox -->
               <div class="mb-4">
                 <label class="flex items-center">
@@ -88,11 +91,11 @@
 
               <!-- Submit Button -->
               <div class="flex justify-center">
-                <button type="submit" class="bg-green-500 text-white px-4 py-2 rounded-md" [disabled]="signupForm.invalid">Register</button>
+                <button type="submit" class="bg-blue-700 text-white px-6 py-3 rounded-md cursor-pointer hover:bg-blue-800" [disabled]="signupForm.invalid">Register</button>
               </div>
 
               <!-- Already have an account -->
-              <p class="text-center text-gray-500 mt-2 mb-0">Already have an account? <a href="#!" class="font-bold text-blue-500 underline">Login here</a></p>
+              <p class="text-center text-gray-500 mt-2">Already have an account? <a href="#!" class="font-bold text-blue-500 underline">Login here</a></p>
             </form>
           </div>
         </div>

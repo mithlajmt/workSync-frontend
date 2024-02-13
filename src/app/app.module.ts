@@ -11,9 +11,15 @@ import { LandingpageComponent } from './shared/components/Home/landingpage/landi
 import { FeaturespageComponent } from './shared/components/Home/featurespage/featurespage.component';
 import { ThirdpageComponent } from './shared/components/Home/thirdpage/thirdpage.component';
 import { FooterComponent } from './shared/components/Home/footer/footer.component';
-import { SignupComponent } from './shared/components/signup/signup.component';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
-
+import { LoginComponent } from './shared/components/login/login.component';
+import { AdminModule } from './admin/admin.module';
+import { OrganisationAdminModule } from './organisation-admin/organisation-admin.module';
+import { SignupComponent } from './shared/components/signup/signup.component';
+import { VerificationOtpComponent } from './shared/components/verification-otp/verification-otp.component';
+import { ToolbarComponent } from './shared/components/main-hrms/toolbar/toolbar.component';
+import { TopbarComponent } from './shared/components/main-hrms/topbar/topbar.component';
+import { AddEmployeeComponent } from './admin/employees/add-employee/add-employee.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -23,7 +29,12 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     FeaturespageComponent,
     ThirdpageComponent,
     FooterComponent,
+    LoginComponent,
     SignupComponent,
+    VerificationOtpComponent,
+    ToolbarComponent,
+    TopbarComponent,
+
 
 
   ],
@@ -32,10 +43,14 @@ import { FormsModule, ReactiveFormsModule } from '@angular/forms';
     AppRoutingModule,
     HttpClientModule,
     FormsModule,
-    ReactiveFormsModule
+    ReactiveFormsModule,
+    AdminModule,
+    OrganisationAdminModule,
+    AdminModule,
+
 
   ],
-  providers: [ApiService],
+  providers: [ApiService,OrganisationAdminModule],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

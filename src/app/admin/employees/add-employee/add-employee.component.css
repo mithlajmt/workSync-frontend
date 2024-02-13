@@ -1,0 +1,83 @@
+.horizontal-form {
+    display: flex;
+    flex-direction: column;
+    max-width: 100%;
+    margin: 0 auto;
+    padding: 0 1rem;
+  }
+  
+  /* Add border and styling to input fields */
+  .horizontal-form input {
+    border: 1px solid #ccc; /* Border color */
+    padding: 0.5rem;
+    margin-bottom: 1rem;
+    border-radius: 0.25rem; /* Rounded corners */
+  }
+  
+  /* Placeholder styles */
+  .horizontal-form input::placeholder {
+    color: #666; /* Placeholder text color */
+  }
+  
+  /* Other existing styles... */
+  
+  /* Animation state styles */
+  :host {
+    display: block;
+  }
+  
+  .horizontal-form {
+    overflow: hidden;
+  }
+  
+  /* Animation state styles... */
+  
+  
+  .form-row {
+    display: flex;
+    gap: 1rem;
+  }
+  
+  .form-group {
+    flex: 1;
+    margin-bottom: 1rem;
+  }
+  
+  button {
+    background-color: #2196F3;
+    color: white;
+    padding: 10px 15px;
+    border: none;
+    cursor: pointer;
+    border-radius: 4px;
+  }
+  
+  /* Add animation styles */
+  :host {
+    display: block;
+  }
+  
+  .horizontal-form {
+    overflow: hidden;
+  }
+  
+  /* Animation state styles */
+  .horizontal-form.ng-enter,
+  .horizontal-form.ng-leave-to {
+    opacity: 0;
+    transform: translateX(-100%);
+    position: relative;
+  }
+  
+  .horizontal-form.ng-enter-active,
+  .horizontal-form.ng-leave-active {
+    transition: all 0.5s;
+  }
+  :host {
+    display: block;
+  }
+  
+  .horizontal-form {
+    overflow: hidden;
+  }
+  

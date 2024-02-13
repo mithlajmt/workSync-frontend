@@ -1,0 +1,9 @@
+.search-in-toolbar::placeholder {
+    /* Properties to adjust the position: */
+    position: absolute;
+    left: 25px; /* Adjust the position as needed */
+    /* Other properties for styling: */
+    opacity: 0.5; /* Adjust opacity for visibility */
+    color: #76839A; /* Adjust color */
+    /* ... */
+  }
