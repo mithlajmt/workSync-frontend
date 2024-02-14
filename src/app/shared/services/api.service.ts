@@ -2,6 +2,7 @@ import { Injectable } from '@angular/core';
 import { HttpClient, HttpHeaders } from '@angular/common/http';
 import { Observable } from 'rxjs';
 import { Login } from '../interfaces/login';
+import { Employee } from '../interfaces/employee';
 
 
 const httpOptions = {
@@ -38,7 +39,11 @@ export class ApiService {
 
 
   login(data:Login){
-    return this.http.post<Login>(`${this.apiUrl}/login`,data,httpOptions)
+    return this.http.post<any>(`${this.apiUrl}/login`,data,httpOptions)
+  }
+
+  addEmployee(data:Employee){
+    return this.http.post<any>(`${this.apiUrl}/employee`,data,httpOptions)
   }
 
   }

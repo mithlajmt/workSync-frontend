@@ -38,8 +38,15 @@ export class LoginComponent implements OnInit {
     this.loginData=this.loginForm.value
     console.log(this.loginData)
     this.api.login(this.loginData).subscribe({
+      
       next:(res)=>{
         console.log(res);
+        
+        
+        if(res.success){
+          console.log('chathisghatt');
+          this.router.navigate(['/home'])
+        }
       },
       error:(err)=>{
         console.log(err);

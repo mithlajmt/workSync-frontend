@@ -5,6 +5,9 @@ import { AddEmployeeComponent } from './employees/add-employee/add-employee.comp
 import { AdminRoutingModule } from './admin-routing.module';
 import { ReactiveFormsModule } from '@angular/forms';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
+import { AdminComponent } from './admin.component';
+import { AppModule } from '../app.module';
+import { TopbarComponent } from '../shared/components/main-hrms/topbar/topbar.component';
 
 
 
@@ -12,13 +15,14 @@ import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 @NgModule({
   declarations: [
     DashboardComponent,
-    AddEmployeeComponent
+    AddEmployeeComponent,
+    AdminComponent,
   ],
   imports: [
     CommonModule,
     AdminRoutingModule,
     ReactiveFormsModule,
-    BrowserAnimationsModule
+    BrowserAnimationsModule,
 
   ],
   exports: [AddEmployeeComponent] 

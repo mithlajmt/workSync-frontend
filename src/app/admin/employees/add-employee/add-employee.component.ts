@@ -45,6 +45,8 @@ export class AddEmployeeComponent {
     if (this.employeeForm.valid) {
       const formValues = this.employeeForm.value;
       console.log('Input values:', formValues); // Log to console
+
+      
     } else {
       console.error('Form is invalid:', this.employeeForm.errors); // Handle invalid form state
     }

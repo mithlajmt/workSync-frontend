@@ -20,6 +20,7 @@ import { VerificationOtpComponent } from './shared/components/verification-otp/v
 import { ToolbarComponent } from './shared/components/main-hrms/toolbar/toolbar.component';
 import { TopbarComponent } from './shared/components/main-hrms/topbar/topbar.component';
 import { AddEmployeeComponent } from './admin/employees/add-employee/add-employee.component';
+import { MainComponent } from './shared/components/main-hrms/main/main.component';
 @NgModule({
   declarations: [
     AppComponent,
@@ -34,6 +35,7 @@ import { AddEmployeeComponent } from './admin/employees/add-employee/add-employe
     VerificationOtpComponent,
     ToolbarComponent,
     TopbarComponent,
+    MainComponent,
 
 
 
